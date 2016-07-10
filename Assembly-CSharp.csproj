@@ -49,6 +49,8 @@
      <Compile Include="Assets\Scripts\ColorLerp.cs" />
      <Compile Include="Assets\Scripts\PortalGenerate.cs" />
      <Compile Include="Assets\Scripts\PortalLocation.cs" />
+     <Compile Include="Assets\Scripts\SliderControl.cs" />
+     <Compile Include="Assets\Scripts\SliderControlOther.cs" />
      <Compile Include="Assets\Scripts\json.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

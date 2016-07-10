@@ -7,6 +7,7 @@ public class PortalGenerate : MonoBehaviour {
 	public GameObject portalEmpty;
 	public GameObject ball;
 	public Transform spawnPointStart;
+	bool iskillScreen = false;
 	public float minDistance = .9f;
 	public string colName;
 	GameObject pFill;
@@ -19,6 +20,7 @@ public class PortalGenerate : MonoBehaviour {
 	public Text score;
 	public int gameScore = 0;
 	public GameObject gameOver;
+	public int colorChange = 0;
 	// Use this for initialization
 	void Start () {
 		speed = startSpeed;
@@ -27,7 +29,13 @@ public class PortalGenerate : MonoBehaviour {
 
 	public void killed()
 	{
+		Destroy (GameObject.FindGameObjectWithTag("empty"));
+		Destroy (GameObject.FindGameObjectWithTag("fill"));
+
+	
+
 		gameOver.SetActive (true);
+		iskillScreen = true;
 	}
 
 	public void quit()
@@ -41,6 +49,10 @@ public class PortalGenerate : MonoBehaviour {
 		counter = 0;
 		gameScore = 0;
 		startSpeed = speed;
+		iskillScreen = false;
+		colorChange = 0;
+	
+
 		Instantiate (ball, spawnPointStart.position, Quaternion.Euler ( 0, 0,Random.Range (0, 360)));
 
 	}
@@ -48,7 +60,7 @@ public class PortalGenerate : MonoBehaviour {
 	void Update () {
 
 
-		if (port && GameObject.FindGameObjectWithTag("empty") != null) {
+		if (port && GameObject.FindGameObjectWithTag("empty") != null ) {
 
 			if (colName == "Up") {
 				GameObject b = Instantiate (ball, GameObject.FindGameObjectWithTag("empty").transform.position + new Vector3(0,-.4f,0), Quaternion.Euler (0, 0, Random.Range (-150,-30f)))as GameObject;
@@ -76,7 +88,7 @@ public class PortalGenerate : MonoBehaviour {
 
 		}
 
-		if ( Input.GetMouseButtonDown (0)){
+		if ( Input.GetMouseButtonDown (0) && !iskillScreen){
 
 
 		
@@ -111,6 +123,8 @@ public class PortalGenerate : MonoBehaviour {
 					}
 					startSpeed = startSpeed + multiplier;
 					counter++;
+				
+
 				}
 
 				if (hit.collider.gameObject.tag == "horizontal") {
@@ -133,6 +147,7 @@ public class PortalGenerate : MonoBehaviour {
 					}
 					startSpeed = startSpeed + multiplier;
 					counter++;
+				
 				}
 			
 			}

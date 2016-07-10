@@ -8,6 +8,16 @@ public class ColorLerp : MonoBehaviour {
 	Color targetColor;
 	void Update()
 	{
+		if (Camera.main.GetComponent<PortalGenerate> ().colorChange == 5) {
+			color ();
+			Invoke ("resetColor", 2f);
+			print (Camera.main.GetComponent<PortalGenerate> ().colorChange);
+
+		}
+	}
+
+	void color()
+	{
 		if (timeLeft <= Time.deltaTime)
 		{
 			// transition complete
@@ -15,7 +25,7 @@ public class ColorLerp : MonoBehaviour {
 			GetComponent<SpriteRenderer>().color= targetColor;
 			// start a new transition
 			targetColor = new Color(Random.value, Random.value, Random.value);
-			timeLeft = 8.0f;
+			timeLeft = 2.0f;
 		}
 		else
 		{
@@ -25,5 +35,10 @@ public class ColorLerp : MonoBehaviour {
 			// update the timer
 			timeLeft -= Time.deltaTime;
 		}
+	}
+	void resetColor()
+	{
+		Camera.main.GetComponent<PortalGenerate> ().colorChange = 0;
+
 	}
 }

@@ -9,7 +9,7 @@ public class Ball : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		StartSpeed = Camera.main.GetComponent<PortalGenerate> ().startSpeed;
-		print (StartSpeed);
+	//	print (StartSpeed);
 	}
 	
 	// Update is called once per frame
@@ -28,6 +28,7 @@ public class Ball : MonoBehaviour {
 		if (other.gameObject.tag == "fill") {
 			Camera.main.GetComponent<PortalGenerate> ().port = true;
 			Camera.main.GetComponent<PortalGenerate> ().gameScore++ ;
+			Camera.main.GetComponent<PortalGenerate> ().colorChange++;
 
 
 			  Destroy (gameObject);
