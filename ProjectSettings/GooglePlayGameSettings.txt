@@ -1,0 +1,10 @@
+lastUpgrade=00934
+proj.pluginVersion=0.9.34
+proj.AppId=251489902642
+and.BundleId=com.UP78Studios.Portals
+proj.classDir=Assets
+proj.ConstantsClassName=Constants
+and.ResourceData=%3c%3fxml+version%3d%221.0%22+encoding%3d%22utf-8%22%3f%3e%0d%0a%3c%21--%0d%0aGoogle+Play+game+services+IDs.%0d%0aSave+this+file+as+res%2fvalues%2fgames-ids.xml+in+your+project.%0d%0a--%3e%0d%0a%3cresources%3e%0d%0a++%3cstring+name%3d%22app_id%22%3e251489902642%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22package_name%22%3ecom.UP78Studios.Portals%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_first_5_points%22%3eCgkIssDd76gHEAIQAQ%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_rookie%22%3eCgkIssDd76gHEAIQAg%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_beginners_luck%22%3eCgkIssDd76gHEAIQAw%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_not_bad%22%3eCgkIssDd76gHEAIQBA%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_someones_seems_to_be_improving%22%3eCgkIssDd76gHEAIQBQ%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22leaderboard_scores%22%3eCgkIssDd76gHEAIQBg%3c%2fstring%3e%0d%0a%3c%2fresources%3e%0d%0a
+and.ClientId=
+proj.requireGPlus=false
+android.SetupDone=true

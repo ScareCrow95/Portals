@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class SliderControl : MonoBehaviour {
 
 	public Slider slider;
-	public float timer = 2f;
+	public float timer = 3f;
 	bool a = true;
 	public float t = 0 ;
 	// Use this for initialization
@@ -30,17 +30,19 @@ public class SliderControl : MonoBehaviour {
 			}
 
 		}
-
-		if (!GameObject.FindGameObjectWithTag ("empty").GetComponent<SliderControlOther> ().portalMade) {
-			t += Time.deltaTime;
-			slider.value = t;
-			if (t >= timer) {
-				Camera.main.GetComponent<PortalGenerate> ().killed ();
+		if (GameObject.FindGameObjectWithTag ("empty") != null) {
+			if (!GameObject.FindGameObjectWithTag ("empty").GetComponent<SliderControlOther> ().portalMade) {
+				t += Time.deltaTime * .5f;
+				slider.value = t;
+				if (t >= timer) {
+					Camera.main.GetComponent<PortalGenerate> ().killed ();
+					t = 0;
+					GameObject.FindGameObjectWithTag ("empty").GetComponent<SliderControlOther> ().portalMade = true;
+				}
+			} else {
 				t = 0;
-				GameObject.FindGameObjectWithTag ("empty").GetComponent<SliderControlOther> ().portalMade = true;
+				slider.value = t;
 			}
-		} else { t = 0;
-			slider.value = t;
 		}
 	}
 	public void changeT()
